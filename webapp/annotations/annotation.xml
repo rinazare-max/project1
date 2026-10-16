@@ -1,0 +1,141 @@
+<edmx:Edmx
+    xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+    Version="4.0">
+
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+
+    <edmx:Reference Uri="/V2/Northwind/Northwind.svc/$metadata">
+        <edmx:Include Namespace="NorthwindModel"/>
+    </edmx:Reference>
+
+    <edmx:DataServices>
+
+        <Schema
+            xmlns="http://docs.oasis-open.org/odata/ns/edm"
+            Namespace="local">
+
+            <Annotations Target="NorthwindModel.Product">
+
+                <!-- List Report Columns -->
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ProductID"/>
+                        </Record>
+
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ProductName"/>
+                        </Record>
+
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="QuantityPerUnit"/>
+                        </Record>
+
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="UnitPrice"/>
+                        </Record>
+
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="UnitsInStock"/>
+                        </Record>
+
+                    </Collection>
+                </Annotation>
+
+                <!-- Filters -->
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>ProductID</PropertyPath>
+                        <PropertyPath>ProductName</PropertyPath>
+                    </Collection>
+                </Annotation>
+
+                <!-- Object Page Header -->
+                <Annotation Term="UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="Product"/>
+                        <PropertyValue Property="TypeNamePlural" String="Products"/>
+
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="ProductName"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+
+                <!-- Object Page Fields -->
+                <Annotation Term="UI.FieldGroup" Qualifier="General">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Product ID"/>
+                                    <PropertyValue Property="Value" Path="ProductID"/>
+                                </Record>
+
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Product Name"/>
+                                    <PropertyValue Property="Value" Path="ProductName"/>
+                                </Record>
+
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Quantity"/>
+                                    <PropertyValue Property="Value" Path="QuantityPerUnit"/>
+                                </Record>
+
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Unit Price"/>
+                                    <PropertyValue Property="Value" Path="UnitPrice"/>
+                                </Record>
+
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Stock"/>
+                                    <PropertyValue Property="Value" Path="UnitsInStock"/>
+                                </Record>
+
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+
+                <!-- Section on Object Page -->
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="General Information"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#General"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+
+                <!-- Identification -->
+                <Annotation Term="UI.Identification">
+                    <Collection>
+
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ProductID"/>
+                        </Record>
+
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ProductName"/>
+                        </Record>
+
+                    </Collection>
+                </Annotation>
+
+            </Annotations>
+
+        </Schema>
+
+    </edmx:DataServices>
+
+</edmx:Edmx>
