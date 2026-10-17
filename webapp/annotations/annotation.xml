@@ -21,27 +21,26 @@
                 <!-- List Report Columns -->
                 <Annotation Term="UI.LineItem">
                     <Collection>
-
                         <Record Type="UI.DataField">
                             <PropertyValue Property="Value" Path="ProductID"/>
+                            <PropertyValue Property="Label" String="Product ID"/>
                         </Record>
-
-                        <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="ProductName"/>
-                        </Record>
-
                         <Record Type="UI.DataField">
                             <PropertyValue Property="Value" Path="QuantityPerUnit"/>
                         </Record>
-
                         <Record Type="UI.DataField">
                             <PropertyValue Property="Value" Path="UnitPrice"/>
                         </Record>
-
                         <Record Type="UI.DataField">
                             <PropertyValue Property="Value" Path="UnitsInStock"/>
                         </Record>
-
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="UnitsOnOrder"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ReorderLevel"/>
+                            <PropertyValue Property="Label" String="Recorder Level"/>
+                        </Record>
                     </Collection>
                 </Annotation>
 
